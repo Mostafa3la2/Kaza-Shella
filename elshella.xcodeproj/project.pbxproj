@@ -8,20 +8,48 @@
 
 /* Begin PBXBuildFile section */
 		0D6CC2AF214578B00089ACB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2AE214578B00089ACB6 /* AppDelegate.swift */; };
-		0D6CC2B1214578B00089ACB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2B0214578B00089ACB6 /* ViewController.swift */; };
+		0D6CC2B1214578B00089ACB6 /* ShellaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2B0214578B00089ACB6 /* ShellaVC.swift */; };
 		0D6CC2B4214578B00089ACB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CC2B2214578B00089ACB6 /* Main.storyboard */; };
 		0D6CC2B6214578B50089ACB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CC2B5214578B50089ACB6 /* Assets.xcassets */; };
 		0D6CC2B9214578B50089ACB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CC2B7214578B50089ACB6 /* LaunchScreen.storyboard */; };
+		0D6CC2C821457B0B0089ACB6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2C721457B0B0089ACB6 /* SWRevealViewController.m */; };
+		0D6CC2CA21457E890089ACB6 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2C921457E890089ACB6 /* ChatVC.swift */; };
+		0D6CC2CC214599780089ACB6 /* TwoColorGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2CB214599780089ACB6 /* TwoColorGradientView.swift */; };
+		0D6CC2CE2145C6750089ACB6 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2CD2145C6750089ACB6 /* SignupVC.swift */; };
+		0D6CC2D02145C68E0089ACB6 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2CF2145C68E0089ACB6 /* LoginVC.swift */; };
+		0D6CC2D22145D1440089ACB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CC2D12145D1440089ACB6 /* GoogleService-Info.plist */; };
+		0D6CC2D42145D1F30089ACB6 /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2D32145D1F30089ACB6 /* UserServices.swift */; };
+		0D6CC2D62145D2270089ACB6 /* FirebaseReferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2D52145D2270089ACB6 /* FirebaseReferences.swift */; };
+		0D6CC2D8214605D00089ACB6 /* CreateShellaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2D7214605D00089ACB6 /* CreateShellaVC.swift */; };
+		0D6CC2DA214607C60089ACB6 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2D9214607C60089ACB6 /* UserCell.swift */; };
+		0D6CC2DC214614C60089ACB6 /* ShellaServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2DB214614C60089ACB6 /* ShellaServices.swift */; };
+		12D731B607A3E58003FE4DF0 /* Pods_elshella.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62F5841616CFB0F83F57789 /* Pods_elshella.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0D6CC2AB214578B00089ACB6 /* elshella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = elshella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D6CC2AE214578B00089ACB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0D6CC2B0214578B00089ACB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0D6CC2B0214578B00089ACB6 /* ShellaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellaVC.swift; sourceTree = "<group>"; };
 		0D6CC2B3214578B00089ACB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D6CC2B5214578B50089ACB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D6CC2B8214578B50089ACB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D6CC2BA214578B50089ACB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D6CC2C521457B090089ACB6 /* elshella-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "elshella-Bridging-Header.h"; sourceTree = "<group>"; };
+		0D6CC2C621457B0A0089ACB6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		0D6CC2C721457B0B0089ACB6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		0D6CC2C921457E890089ACB6 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		0D6CC2CB214599780089ACB6 /* TwoColorGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoColorGradientView.swift; sourceTree = "<group>"; };
+		0D6CC2CD2145C6750089ACB6 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		0D6CC2CF2145C68E0089ACB6 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		0D6CC2D12145D1440089ACB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0D6CC2D32145D1F30089ACB6 /* UserServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
+		0D6CC2D52145D2270089ACB6 /* FirebaseReferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReferences.swift; sourceTree = "<group>"; };
+		0D6CC2D7214605D00089ACB6 /* CreateShellaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateShellaVC.swift; sourceTree = "<group>"; };
+		0D6CC2D9214607C60089ACB6 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		0D6CC2DB214614C60089ACB6 /* ShellaServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellaServices.swift; sourceTree = "<group>"; };
+		767C490CEB8B794DA3AEDE9D /* Pods-elshella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elshella.release.xcconfig"; path = "Pods/Target Support Files/Pods-elshella/Pods-elshella.release.xcconfig"; sourceTree = "<group>"; };
+		C3579015DD5AEF25D3C72ED9 /* Pods-elshella.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elshella.debug.xcconfig"; path = "Pods/Target Support Files/Pods-elshella/Pods-elshella.debug.xcconfig"; sourceTree = "<group>"; };
+		C62F5841616CFB0F83F57789 /* Pods_elshella.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_elshella.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12D731B607A3E58003FE4DF0 /* Pods_elshella.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +69,8 @@
 			children = (
 				0D6CC2AD214578B00089ACB6 /* elshella */,
 				0D6CC2AC214578B00089ACB6 /* Products */,
+				78AE220A353446E548353474 /* Pods */,
+				FCD9AAED96526759CB0C194C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +85,84 @@
 		0D6CC2AD214578B00089ACB6 /* elshella */ = {
 			isa = PBXGroup;
 			children = (
+				0D6CC2C421457AD70089ACB6 /* Services */,
+				0D6CC2C321457ACD0089ACB6 /* Supporting files */,
+				0D6CC2C221457AC70089ACB6 /* Controllers */,
+				0D6CC2C121457ABD0089ACB6 /* Views */,
+				0D6CC2C021457AAD0089ACB6 /* Model */,
 				0D6CC2AE214578B00089ACB6 /* AppDelegate.swift */,
-				0D6CC2B0214578B00089ACB6 /* ViewController.swift */,
 				0D6CC2B2214578B00089ACB6 /* Main.storyboard */,
 				0D6CC2B5214578B50089ACB6 /* Assets.xcassets */,
 				0D6CC2B7214578B50089ACB6 /* LaunchScreen.storyboard */,
 				0D6CC2BA214578B50089ACB6 /* Info.plist */,
+				0D6CC2D12145D1440089ACB6 /* GoogleService-Info.plist */,
 			);
 			path = elshella;
+			sourceTree = "<group>";
+		};
+		0D6CC2C021457AAD0089ACB6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0D6CC2C121457ABD0089ACB6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0D6CC2CB214599780089ACB6 /* TwoColorGradientView.swift */,
+				0D6CC2D9214607C60089ACB6 /* UserCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0D6CC2C221457AC70089ACB6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0D6CC2B0214578B00089ACB6 /* ShellaVC.swift */,
+				0D6CC2C921457E890089ACB6 /* ChatVC.swift */,
+				0D6CC2CD2145C6750089ACB6 /* SignupVC.swift */,
+				0D6CC2CF2145C68E0089ACB6 /* LoginVC.swift */,
+				0D6CC2D7214605D00089ACB6 /* CreateShellaVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0D6CC2C321457ACD0089ACB6 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				0D6CC2C621457B0A0089ACB6 /* SWRevealViewController.h */,
+				0D6CC2C721457B0B0089ACB6 /* SWRevealViewController.m */,
+				0D6CC2C521457B090089ACB6 /* elshella-Bridging-Header.h */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		0D6CC2C421457AD70089ACB6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0D6CC2D32145D1F30089ACB6 /* UserServices.swift */,
+				0D6CC2D52145D2270089ACB6 /* FirebaseReferences.swift */,
+				0D6CC2DB214614C60089ACB6 /* ShellaServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		78AE220A353446E548353474 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C3579015DD5AEF25D3C72ED9 /* Pods-elshella.debug.xcconfig */,
+				767C490CEB8B794DA3AEDE9D /* Pods-elshella.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FCD9AAED96526759CB0C194C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C62F5841616CFB0F83F57789 /* Pods_elshella.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D6CC2BD214578B50089ACB6 /* Build configuration list for PBXNativeTarget "elshella" */;
 			buildPhases = (
+				DAA0E4B8B7C5080BAEF3E268 /* [CP] Check Pods Manifest.lock */,
 				0D6CC2A7214578B00089ACB6 /* Sources */,
 				0D6CC2A8214578B00089ACB6 /* Frameworks */,
 				0D6CC2A9214578B00089ACB6 /* Resources */,
+				BB69FE196E94938C1A2C69E8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,6 +199,7 @@
 				TargetAttributes = {
 					0D6CC2AA214578B00089ACB6 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -123,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D6CC2B9214578B50089ACB6 /* LaunchScreen.storyboard in Resources */,
+				0D6CC2D22145D1440089ACB6 /* GoogleService-Info.plist in Resources */,
 				0D6CC2B6214578B50089ACB6 /* Assets.xcassets in Resources */,
 				0D6CC2B4214578B00089ACB6 /* Main.storyboard in Resources */,
 			);
@@ -130,13 +235,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BB69FE196E94938C1A2C69E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-elshella/Pods-elshella-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-elshella/Pods-elshella-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAA0E4B8B7C5080BAEF3E268 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-elshella-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0D6CC2A7214578B00089ACB6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D6CC2B1214578B00089ACB6 /* ViewController.swift in Sources */,
+				0D6CC2D42145D1F30089ACB6 /* UserServices.swift in Sources */,
+				0D6CC2CE2145C6750089ACB6 /* SignupVC.swift in Sources */,
+				0D6CC2CA21457E890089ACB6 /* ChatVC.swift in Sources */,
+				0D6CC2D62145D2270089ACB6 /* FirebaseReferences.swift in Sources */,
+				0D6CC2DC214614C60089ACB6 /* ShellaServices.swift in Sources */,
+				0D6CC2D02145C68E0089ACB6 /* LoginVC.swift in Sources */,
+				0D6CC2D8214605D00089ACB6 /* CreateShellaVC.swift in Sources */,
+				0D6CC2B1214578B00089ACB6 /* ShellaVC.swift in Sources */,
 				0D6CC2AF214578B00089ACB6 /* AppDelegate.swift in Sources */,
+				0D6CC2C821457B0B0089ACB6 /* SWRevealViewController.m in Sources */,
+				0D6CC2DA214607C60089ACB6 /* UserCell.swift in Sources */,
+				0D6CC2CC214599780089ACB6 /* TwoColorGradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,8 +438,10 @@
 		};
 		0D6CC2BE214578B50089ACB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3579015DD5AEF25D3C72ED9 /* Pods-elshella.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NC7G924HW9;
 				INFOPLIST_FILE = elshella/Info.plist;
@@ -289,6 +451,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alaa.mostafa.elshella;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "elshella/Supporting files/elshella-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -296,8 +460,10 @@
 		};
 		0D6CC2BF214578B50089ACB6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 767C490CEB8B794DA3AEDE9D /* Pods-elshella.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NC7G924HW9;
 				INFOPLIST_FILE = elshella/Info.plist;
@@ -307,6 +473,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alaa.mostafa.elshella;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "elshella/Supporting files/elshella-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

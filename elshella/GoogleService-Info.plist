@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>601516040614-d6ho6mncekifiqe8e4pqr2dkdrrpno0j.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.601516040614-d6ho6mncekifiqe8e4pqr2dkdrrpno0j</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCfJDccFDQG9R5sYg0t2Itw3f9yPd26BbE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>601516040614</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.alaa.mostafa.elshella</string>
+	<key>PROJECT_ID</key>
+	<string>kaza-shella</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kaza-shella.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:601516040614:ios:c4eb742ba8cfe0a3</string>
+	<key>DATABASE_URL</key>
+	<string>https://kaza-shella.firebaseio.com</string>
+</dict>
+</plist>
