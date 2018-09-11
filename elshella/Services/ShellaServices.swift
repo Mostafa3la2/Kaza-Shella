@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+
 class ShellaServices{
     
     private init(){
@@ -16,9 +17,10 @@ class ShellaServices{
     static let instance = ShellaServices()
     
     
-    func CreateShella(withTitle title:String, andDescription description:String,forUserIds userIds:[String],completionHandler:@escaping (_ status :Bool)->()){
-        FirebaseReferences.instance.REF_SHELLA.childByAutoId().updateChildValues(["title":title,"description":description,"members":userIds])
+    func CreateShella(withTitle title:String, andDescription description:String,andImageUrl imageURL:String?,forUserIds userIds:[String],completionHandler:@escaping (_ status :Bool)->()){
+        FirebaseReferences.instance.REF_SHELLA.childByAutoId().updateChildValues(["title":title,"description":description,"members":userIds,"ImageURL":imageURL])
             completionHandler(true)
     }
+
     
 }

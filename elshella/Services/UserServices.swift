@@ -40,7 +40,8 @@ class UserServices{
     
     func getEmailsStarting(WithCharacters characters:String,handler:@escaping(_ emails:[String])->()){
         var emailArray = [String]()
-        FirebaseReferences.instance.REF_USERS.child("friends").observe(.value) { (userSnapshot) in
+        //this should be updated to observe only friends not users
+        FirebaseReferences.instance.REF_USERS.observe(.value) { (userSnapshot) in
             guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else{return}
             for user in userSnapshot{
                 let email = user.childSnapshot(forPath: "email").value as! String
@@ -50,6 +51,22 @@ class UserServices{
             }
             handler(emailArray)
         }
+        
+    }
+    
+    func getIds(forEmails emails:[String],handler:@escaping (_ uidArray:[String])->()){
+        var idArray = [String]()
+        FirebaseReferences.instance.REF_USERS.observeSingleEvent(of: .value) { (usersnapShot) in
+            guard let usersnapShot = usersnapShot.children.allObjects as? [DataSnapshot] else {return}
+            for user in usersnapShot{
+                let email = user.childSnapshot(forPath: "email").value as! String
+                if emails.contains(email){
+                    idArray.append(email)
+                }
+            }
+            handler(idArray)
+        }
+        
         
     }
     

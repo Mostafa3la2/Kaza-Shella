@@ -8,9 +8,10 @@
 
 import Foundation
 import Firebase
+import FirebaseStorage
 
 let DB_BASE = Database.database().reference()
-
+let STORAGE = Storage.storage().reference()
 class FirebaseReferences{
     
     private init(){
@@ -22,6 +23,9 @@ class FirebaseReferences{
     private var _REF_USERS = DB_BASE.child("users")
     private var _REF_SHELLA = DB_BASE.child("shellas")
     private var _REF_FEED = DB_BASE.child("feed")
+    
+    private var _REF_STORAGE = STORAGE
+    
     
     var REF_BASE : DatabaseReference{
         return _REF_DATABASE
@@ -36,6 +40,9 @@ class FirebaseReferences{
         return _REF_FEED
     }
     
+    var REF_STORAGE : StorageReference{
+        return _REF_STORAGE
+    }
    
 
     

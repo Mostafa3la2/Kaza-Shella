@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EE416EBC81D6138A97597A60D2F9B4C0"
+               BlueprintIdentifier = "E9B35EA09AB63026BEE52E9611068208"
                BlueprintName = "Pods-elshella"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Pods-elshella.framework">

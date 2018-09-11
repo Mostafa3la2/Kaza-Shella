@@ -230,6 +230,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="titlefieldEdited:" destination="lTm-Ux-4bp" eventType="editingChanged" id="OUl-F4-nNh"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shella Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiS-zm-Knp">
                                         <rect key="frame" x="0.0" y="71" width="365" height="21"/>
@@ -242,6 +245,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="descriptionfieldEdited:" destination="lTm-Ux-4bp" eventType="editingChanged" id="6Vf-10-fhn"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add picture (optional) :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0p-AK-Rvq">
                                         <rect key="frame" x="0.0" y="142" width="365" height="21"/>
@@ -276,7 +282,7 @@
                                         <rect key="frame" x="0.0" y="289" width="365" height="248"/>
                                         <color key="backgroundColor" red="0.60392156860000001" green="0.76862745099999996" blue="0.97254901959999995" alpha="0.69806827910958902" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0WS-RQ-bJH" customClass="UserCell" customModule="elshella" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" id="0WS-RQ-bJH" customClass="UserCell" customModule="elshella" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="365" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0WS-RQ-bJH" id="ELE-83-Uef">
