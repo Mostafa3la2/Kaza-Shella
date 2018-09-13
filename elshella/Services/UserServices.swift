@@ -61,7 +61,7 @@ class UserServices{
             for user in usersnapShot{
                 let email = user.childSnapshot(forPath: "email").value as! String
                 if emails.contains(email){
-                    idArray.append(email)
+                    idArray.append(user.key)
                 }
             }
             handler(idArray)

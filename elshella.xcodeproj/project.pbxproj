@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D02C0DE21496D370011904F /* Shella.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D02C0DD21496D360011904F /* Shella.swift */; };
+		0D02C0E021497AC60011904F /* ShellaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D02C0DF21497AC60011904F /* ShellaCell.swift */; };
+		0D09E2BF214A0B9A004B22EB /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D09E2BE214A0B9A004B22EB /* CircularImageView.swift */; };
+		0D09E2C2214A0E76004B22EB /* imageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D09E2C1214A0E76004B22EB /* imageViewExt.swift */; };
 		0D6CC2AF214578B00089ACB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2AE214578B00089ACB6 /* AppDelegate.swift */; };
 		0D6CC2B1214578B00089ACB6 /* ShellaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2B0214578B00089ACB6 /* ShellaVC.swift */; };
 		0D6CC2B4214578B00089ACB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CC2B2214578B00089ACB6 /* Main.storyboard */; };
@@ -27,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D02C0DD21496D360011904F /* Shella.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shella.swift; sourceTree = "<group>"; };
+		0D02C0DF21497AC60011904F /* ShellaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellaCell.swift; sourceTree = "<group>"; };
+		0D09E2BE214A0B9A004B22EB /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
+		0D09E2C1214A0E76004B22EB /* imageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageViewExt.swift; sourceTree = "<group>"; };
 		0D6CC2AB214578B00089ACB6 /* elshella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = elshella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D6CC2AE214578B00089ACB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D6CC2B0214578B00089ACB6 /* ShellaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellaVC.swift; sourceTree = "<group>"; };
@@ -64,6 +72,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D09E2C0214A0E32004B22EB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0D09E2C1214A0E76004B22EB /* imageViewExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		0D6CC2A2214578B00089ACB6 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +101,7 @@
 		0D6CC2AD214578B00089ACB6 /* elshella */ = {
 			isa = PBXGroup;
 			children = (
+				0D09E2C0214A0E32004B22EB /* Extensions */,
 				0D6CC2C421457AD70089ACB6 /* Services */,
 				0D6CC2C321457ACD0089ACB6 /* Supporting files */,
 				0D6CC2C221457AC70089ACB6 /* Controllers */,
@@ -103,6 +120,7 @@
 		0D6CC2C021457AAD0089ACB6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0D02C0DD21496D360011904F /* Shella.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -112,6 +130,8 @@
 			children = (
 				0D6CC2CB214599780089ACB6 /* TwoColorGradientView.swift */,
 				0D6CC2D9214607C60089ACB6 /* UserCell.swift */,
+				0D02C0DF21497AC60011904F /* ShellaCell.swift */,
+				0D09E2BE214A0B9A004B22EB /* CircularImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,7 +313,11 @@
 				0D6CC2D02145C68E0089ACB6 /* LoginVC.swift in Sources */,
 				0D6CC2D8214605D00089ACB6 /* CreateShellaVC.swift in Sources */,
 				0D6CC2B1214578B00089ACB6 /* ShellaVC.swift in Sources */,
+				0D02C0DE21496D370011904F /* Shella.swift in Sources */,
 				0D6CC2AF214578B00089ACB6 /* AppDelegate.swift in Sources */,
+				0D09E2BF214A0B9A004B22EB /* CircularImageView.swift in Sources */,
+				0D02C0E021497AC60011904F /* ShellaCell.swift in Sources */,
+				0D09E2C2214A0E76004B22EB /* imageViewExt.swift in Sources */,
 				0D6CC2C821457B0B0089ACB6 /* SWRevealViewController.m in Sources */,
 				0D6CC2DA214607C60089ACB6 /* UserCell.swift in Sources */,
 				0D6CC2CC214599780089ACB6 /* TwoColorGradientView.swift in Sources */,

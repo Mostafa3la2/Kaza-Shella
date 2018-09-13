@@ -69,24 +69,69 @@
                                     <constraint firstAttribute="bottom" secondItem="9ak-xz-1eZ" secondAttribute="bottom" constant="20" id="msj-3J-E4u"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdM-MY-DOT" customClass="TwoColorGradientView" customModule="elshella" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdM-MY-DOT">
                                 <rect key="frame" x="0.0" y="80" width="375" height="587"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AlX-Gz-b5Y">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AlX-Gz-b5Y">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="512"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="7KA-Oj-02I">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="shellaCell" rowHeight="80" id="7KA-Oj-02I" customClass="ShellaCell" customModule="elshella" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7KA-Oj-02I" id="c3Z-Du-1sd">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cru-cc-VGE" customClass="CircularImageView" customModule="elshella" customModuleProvider="target">
+                                                            <rect key="frame" x="5" y="10" width="60" height="60"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="60" id="HNJ-g6-W8G"/>
+                                                                <constraint firstAttribute="width" constant="60" id="RoI-JM-5RN"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vbN-sS-C69">
+                                                            <rect key="frame" x="75" y="5" width="240" height="72"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmY-vr-mz1">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="20"/>
+                                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLm-eK-MAc">
+                                                                    <rect key="frame" x="0.0" y="30" width="240" height="16.5"/>
+                                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="members:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWA-Ub-K9q">
+                                                                    <rect key="frame" x="0.0" y="56.5" width="240" height="15.5"/>
+                                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="13"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="cru-cc-VGE" firstAttribute="leading" secondItem="c3Z-Du-1sd" secondAttribute="leading" constant="5" id="25Y-bL-r2o"/>
+                                                        <constraint firstItem="vbN-sS-C69" firstAttribute="top" secondItem="c3Z-Du-1sd" secondAttribute="top" constant="5" id="7Os-1s-jNd"/>
+                                                        <constraint firstItem="cru-cc-VGE" firstAttribute="top" secondItem="c3Z-Du-1sd" secondAttribute="top" constant="10" id="AXF-e7-OWj"/>
+                                                        <constraint firstItem="vbN-sS-C69" firstAttribute="leading" secondItem="cru-cc-VGE" secondAttribute="trailing" constant="10" id="t5q-n8-KVu"/>
+                                                        <constraint firstAttribute="trailing" secondItem="vbN-sS-C69" secondAttribute="trailing" constant="60" id="x43-ba-Rjk"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
+                                                <color key="backgroundColor" red="0.60392156860000001" green="0.76862745099999996" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <outlet property="descriptionLbl" destination="JLm-eK-MAc" id="cej-VJ-CWd"/>
+                                                    <outlet property="membersCountLbl" destination="wWA-Ub-K9q" id="K2w-nt-jMA"/>
+                                                    <outlet property="shellaImage" destination="cru-cc-VGE" id="TeJ-9C-aZ7"/>
+                                                    <outlet property="titleLbl" destination="fmY-vr-mz1" id="Wso-6j-Dd7"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="au8-Gq-OiI" customClass="TwoColorGradientView" customModule="elshella" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="au8-Gq-OiI">
                                         <rect key="frame" x="0.0" y="512" width="375" height="75"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8dJ-dF-N0P">
@@ -111,7 +156,7 @@
                                                 </state>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.60392156860000001" green="0.76862745099999996" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="8dJ-dF-N0P" firstAttribute="centerY" secondItem="au8-Gq-OiI" secondAttribute="centerY" id="PLx-ZS-fzY"/>
                                             <constraint firstItem="8dJ-dF-N0P" firstAttribute="leading" secondItem="au8-Gq-OiI" secondAttribute="leading" constant="15" id="as6-hY-fES"/>
@@ -127,7 +172,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.60392156860000001" green="0.76862745099999996" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="AlX-Gz-b5Y" firstAttribute="top" secondItem="gdM-MY-DOT" secondAttribute="top" id="6Oy-Qx-I5Y"/>
                                     <constraint firstAttribute="trailing" secondItem="AlX-Gz-b5Y" secondAttribute="trailing" id="8r7-7t-xen"/>
@@ -158,6 +203,9 @@
                             <constraint firstItem="llh-hj-a32" firstAttribute="top" secondItem="uTz-KL-zDo" secondAttribute="top" id="kCL-h6-pLL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="shellaTableView" destination="AlX-Gz-b5Y" id="0kR-Q7-5Vg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0lB-U7-9Ha" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
