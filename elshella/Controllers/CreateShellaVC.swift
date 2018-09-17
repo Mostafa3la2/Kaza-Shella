@@ -18,7 +18,7 @@ class CreateShellaVC: UIViewController {
     @IBOutlet weak var doneBtn: UIButton!
     
     
-    var usersArray = [String]()
+    var usersArray = [OtherUser]()
     var selectedUsersArray = [String]()
     var imagePicked:UIImage?
     override func viewDidLoad() {
@@ -34,7 +34,11 @@ class CreateShellaVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        doneBtn.isHidden = true
+        if shellaTitleTextField.text != "" && shellaDescriptionTextField.text != "" {
+            doneBtn.isHidden = false
+        }else{
+            doneBtn.isHidden = true}
+        
         
     }
     
@@ -43,7 +47,7 @@ class CreateShellaVC: UIViewController {
             usersArray = []
             usersTableView.reloadData()
         }else{
-            UserServices.instance.getEmailsStarting(WithCharacters: usersTextField.text!) { (returnedUsersArray) in
+            UserServices.instance.getUsersStarting(WithCharacters: usersTextField.text!) { (returnedUsersArray) in
                 self.usersArray = returnedUsersArray
                 self.usersTableView.reloadData()
             }
@@ -146,11 +150,11 @@ extension CreateShellaVC : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let userCell = tableView.dequeueReusableCell(withIdentifier: "UserCell") as? UserCell else {return UITableViewCell()}
         
-        let email = usersArray[indexPath.row]
-        if selectedUsersArray.contains(email){
-            userCell.configureCell(username: email, isSelected: true)
+        let user = usersArray[indexPath.row]
+        if selectedUsersArray.contains(user.email){
+            userCell.configureCell(username: user.email, isSelected: true)
         }else{
-            userCell.configureCell(username: email, isSelected: false)
+            userCell.configureCell(username: user.email, isSelected: false)
         }
         return userCell
     }
@@ -172,7 +176,7 @@ extension CreateShellaVC : UITableViewDelegate,UITableViewDataSource{
 extension CreateShellaVC:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let editedImage = info[UIImagePickerControllerEditedImage] {
-            imagePicked = editedImage as! UIImage
+            imagePicked = editedImage as? UIImage
         }else{
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
             imagePicked = image

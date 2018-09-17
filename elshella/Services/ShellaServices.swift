@@ -53,9 +53,9 @@ class ShellaServices{
         }
         
     }
-    func downloadImage(withURL url:String,cell:ShellaCell){
-        cell.shellaImage.loadImageUsingCacheWithUrlString(urlString: url)
-    }
+    
+
+    
 
     
 }

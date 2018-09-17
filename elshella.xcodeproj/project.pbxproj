@@ -11,6 +11,8 @@
 		0D02C0E021497AC60011904F /* ShellaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D02C0DF21497AC60011904F /* ShellaCell.swift */; };
 		0D09E2BF214A0B9A004B22EB /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D09E2BE214A0B9A004B22EB /* CircularImageView.swift */; };
 		0D09E2C2214A0E76004B22EB /* imageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D09E2C1214A0E76004B22EB /* imageViewExt.swift */; };
+		0D5315C4214D9FA7007EC2A4 /* SegmentControlExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5315C3214D9FA7007EC2A4 /* SegmentControlExt.swift */; };
+		0D5315C6214DB65B007EC2A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5315C5214DB65B007EC2A4 /* User.swift */; };
 		0D6CC2AF214578B00089ACB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2AE214578B00089ACB6 /* AppDelegate.swift */; };
 		0D6CC2B1214578B00089ACB6 /* ShellaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2B0214578B00089ACB6 /* ShellaVC.swift */; };
 		0D6CC2B4214578B00089ACB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CC2B2214578B00089ACB6 /* Main.storyboard */; };
@@ -18,7 +20,6 @@
 		0D6CC2B9214578B50089ACB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CC2B7214578B50089ACB6 /* LaunchScreen.storyboard */; };
 		0D6CC2C821457B0B0089ACB6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2C721457B0B0089ACB6 /* SWRevealViewController.m */; };
 		0D6CC2CA21457E890089ACB6 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2C921457E890089ACB6 /* ChatVC.swift */; };
-		0D6CC2CC214599780089ACB6 /* TwoColorGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2CB214599780089ACB6 /* TwoColorGradientView.swift */; };
 		0D6CC2CE2145C6750089ACB6 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2CD2145C6750089ACB6 /* SignupVC.swift */; };
 		0D6CC2D02145C68E0089ACB6 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2CF2145C68E0089ACB6 /* LoginVC.swift */; };
 		0D6CC2D22145D1440089ACB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D6CC2D12145D1440089ACB6 /* GoogleService-Info.plist */; };
@@ -27,6 +28,11 @@
 		0D6CC2D8214605D00089ACB6 /* CreateShellaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2D7214605D00089ACB6 /* CreateShellaVC.swift */; };
 		0D6CC2DA214607C60089ACB6 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2D9214607C60089ACB6 /* UserCell.swift */; };
 		0D6CC2DC214614C60089ACB6 /* ShellaServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6CC2DB214614C60089ACB6 /* ShellaServices.swift */; };
+		0DF024CB214C37170064C726 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF024CA214C37170064C726 /* Helpers.swift */; };
+		0DF98C7C214CA63700FBA0F4 /* ViewFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF98C7B214CA63700FBA0F4 /* ViewFriendCell.swift */; };
+		0DF98C7E214CA65600FBA0F4 /* AddFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF98C7D214CA65600FBA0F4 /* AddFriendCell.swift */; };
+		0DF98C80214CA66A00FBA0F4 /* ViewRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF98C7F214CA66A00FBA0F4 /* ViewRequestCell.swift */; };
+		0DFD0C42214B2831001FFFE1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFD0C41214B2831001FFFE1 /* ProfileVC.swift */; };
 		12D731B607A3E58003FE4DF0 /* Pods_elshella.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62F5841616CFB0F83F57789 /* Pods_elshella.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +41,8 @@
 		0D02C0DF21497AC60011904F /* ShellaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellaCell.swift; sourceTree = "<group>"; };
 		0D09E2BE214A0B9A004B22EB /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		0D09E2C1214A0E76004B22EB /* imageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageViewExt.swift; sourceTree = "<group>"; };
+		0D5315C3214D9FA7007EC2A4 /* SegmentControlExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlExt.swift; sourceTree = "<group>"; };
+		0D5315C5214DB65B007EC2A4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0D6CC2AB214578B00089ACB6 /* elshella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = elshella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D6CC2AE214578B00089ACB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D6CC2B0214578B00089ACB6 /* ShellaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellaVC.swift; sourceTree = "<group>"; };
@@ -46,7 +54,6 @@
 		0D6CC2C621457B0A0089ACB6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		0D6CC2C721457B0B0089ACB6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		0D6CC2C921457E890089ACB6 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
-		0D6CC2CB214599780089ACB6 /* TwoColorGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoColorGradientView.swift; sourceTree = "<group>"; };
 		0D6CC2CD2145C6750089ACB6 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		0D6CC2CF2145C68E0089ACB6 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		0D6CC2D12145D1440089ACB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -55,6 +62,11 @@
 		0D6CC2D7214605D00089ACB6 /* CreateShellaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateShellaVC.swift; sourceTree = "<group>"; };
 		0D6CC2D9214607C60089ACB6 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		0D6CC2DB214614C60089ACB6 /* ShellaServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellaServices.swift; sourceTree = "<group>"; };
+		0DF024CA214C37170064C726 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		0DF98C7B214CA63700FBA0F4 /* ViewFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFriendCell.swift; sourceTree = "<group>"; };
+		0DF98C7D214CA65600FBA0F4 /* AddFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendCell.swift; sourceTree = "<group>"; };
+		0DF98C7F214CA66A00FBA0F4 /* ViewRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRequestCell.swift; sourceTree = "<group>"; };
+		0DFD0C41214B2831001FFFE1 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		767C490CEB8B794DA3AEDE9D /* Pods-elshella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elshella.release.xcconfig"; path = "Pods/Target Support Files/Pods-elshella/Pods-elshella.release.xcconfig"; sourceTree = "<group>"; };
 		C3579015DD5AEF25D3C72ED9 /* Pods-elshella.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elshella.debug.xcconfig"; path = "Pods/Target Support Files/Pods-elshella/Pods-elshella.debug.xcconfig"; sourceTree = "<group>"; };
 		C62F5841616CFB0F83F57789 /* Pods_elshella.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_elshella.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				0D09E2C1214A0E76004B22EB /* imageViewExt.swift */,
+				0D5315C3214D9FA7007EC2A4 /* SegmentControlExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -101,6 +114,7 @@
 		0D6CC2AD214578B00089ACB6 /* elshella */ = {
 			isa = PBXGroup;
 			children = (
+				0DF024C9214C37030064C726 /* Utils */,
 				0D09E2C0214A0E32004B22EB /* Extensions */,
 				0D6CC2C421457AD70089ACB6 /* Services */,
 				0D6CC2C321457ACD0089ACB6 /* Supporting files */,
@@ -121,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				0D02C0DD21496D360011904F /* Shella.swift */,
+				0D5315C5214DB65B007EC2A4 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,10 +143,12 @@
 		0D6CC2C121457ABD0089ACB6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0D6CC2CB214599780089ACB6 /* TwoColorGradientView.swift */,
 				0D6CC2D9214607C60089ACB6 /* UserCell.swift */,
 				0D02C0DF21497AC60011904F /* ShellaCell.swift */,
 				0D09E2BE214A0B9A004B22EB /* CircularImageView.swift */,
+				0DF98C7B214CA63700FBA0F4 /* ViewFriendCell.swift */,
+				0DF98C7D214CA65600FBA0F4 /* AddFriendCell.swift */,
+				0DF98C7F214CA66A00FBA0F4 /* ViewRequestCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -144,6 +161,7 @@
 				0D6CC2CD2145C6750089ACB6 /* SignupVC.swift */,
 				0D6CC2CF2145C68E0089ACB6 /* LoginVC.swift */,
 				0D6CC2D7214605D00089ACB6 /* CreateShellaVC.swift */,
+				0DFD0C41214B2831001FFFE1 /* ProfileVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -166,6 +184,14 @@
 				0D6CC2DB214614C60089ACB6 /* ShellaServices.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		0DF024C9214C37030064C726 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0DF024CA214C37170064C726 /* Helpers.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		78AE220A353446E548353474 /* Pods */ = {
@@ -316,11 +342,17 @@
 				0D02C0DE21496D370011904F /* Shella.swift in Sources */,
 				0D6CC2AF214578B00089ACB6 /* AppDelegate.swift in Sources */,
 				0D09E2BF214A0B9A004B22EB /* CircularImageView.swift in Sources */,
+				0D5315C4214D9FA7007EC2A4 /* SegmentControlExt.swift in Sources */,
+				0DF98C7E214CA65600FBA0F4 /* AddFriendCell.swift in Sources */,
 				0D02C0E021497AC60011904F /* ShellaCell.swift in Sources */,
 				0D09E2C2214A0E76004B22EB /* imageViewExt.swift in Sources */,
+				0DF98C7C214CA63700FBA0F4 /* ViewFriendCell.swift in Sources */,
+				0DF024CB214C37170064C726 /* Helpers.swift in Sources */,
+				0DFD0C42214B2831001FFFE1 /* ProfileVC.swift in Sources */,
 				0D6CC2C821457B0B0089ACB6 /* SWRevealViewController.m in Sources */,
+				0DF98C80214CA66A00FBA0F4 /* ViewRequestCell.swift in Sources */,
 				0D6CC2DA214607C60089ACB6 /* UserCell.swift in Sources */,
-				0D6CC2CC214599780089ACB6 /* TwoColorGradientView.swift in Sources */,
+				0D5315C6214DB65B007EC2A4 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

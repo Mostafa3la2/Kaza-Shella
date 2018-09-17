@@ -7,17 +7,22 @@
 //
 
 import UIKit
-
+import Firebase
 class ShellaVC: UIViewController {
 
     @IBOutlet weak var shellaTableView: UITableView!
     
+    @IBOutlet weak var emailLbl: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
     var shellaArray = [Shella]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 40
         shellaTableView.delegate = self
         shellaTableView.dataSource = self
+        emailLbl.text = UserServices.instance.user.email!
+        
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -28,6 +33,10 @@ class ShellaVC: UIViewController {
                 self.shellaTableView.reloadData()
             })
         }
+        if let photoURL = UserServices.instance.user.photoURL {
+            downloadImage(withURL: photoURL.absoluteString, imageView: profileImage)
+        }
+        
     }
 
 }
@@ -41,9 +50,9 @@ extension ShellaVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "shellaCell") as? ShellaCell else {return UITableViewCell()}
         let shella = shellaArray[indexPath.row]
-        var image = UIImage(named: "menuProfileIcon")
+        let image = UIImage(named: "menuProfileIcon")
         if shella.imageURL != ""{
-            ShellaServices.instance.downloadImage(withURL: shella.imageURL,cell: cell)
+            downloadImage(withURL: shella.imageURL,imageView: cell.shellaImage)
         }else{
             cell.setCellImage(image: image!)
         }
