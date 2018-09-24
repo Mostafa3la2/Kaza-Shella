@@ -15,27 +15,45 @@ class ShellaVC: UIViewController {
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     var shellaArray = [Shella]()
+    
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 40
         shellaTableView.delegate = self
         shellaTableView.dataSource = self
         emailLbl.text = UserServices.instance.user.email!
+        UserServices.instance.getFriends { (success) in
+            if success{
+                print("friends fetched successfully")
+            }
+        }
+        UserServices.instance.getRequests { (success) in
+            if success{
+                print("requests fetched successfully")
+            }
+        }
         
         
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         FirebaseReferences.instance.REF_SHELLA.observe(.value) { (snapShot) in
-            ShellaServices.instance.getAllShellas(handler: { (returnedShellaArray) in
-                self.shellaArray = returnedShellaArray
-                print(self.shellaArray.count)
-                self.shellaTableView.reloadData()
+            ShellaServices.instance.getAllShellas(handler: { (success) in
+                if success{
+                    self.shellaArray = UserServices.instance.shellas
+                    print(self.shellaArray.count)
+                    self.shellaTableView.reloadData()
+                }
             })
         }
-        if let photoURL = UserServices.instance.user.photoURL {
-            downloadImage(withURL: photoURL.absoluteString, imageView: profileImage)
+        UserServices.instance.getImageURL(forUserId: UserServices.instance.user.uid) { (returnedImageURL) in
+            let imageURL = returnedImageURL
+            if imageURL != ""{
+                downloadImage(withURL: imageURL, imageView: self.profileImage)}
         }
+
         
     }
 
@@ -59,6 +77,20 @@ extension ShellaVC:UITableViewDelegate,UITableViewDataSource{
         cell.configureCell( title: shella.title, description: shella.desc, membersCount: String(shella.membersCount))
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+        //let chatVC = self.revealViewController().frontViewController as! ChatVC
+        //chatVC.initShellaData(forShella: shellaArray[indexPath.row])
+        //how to update chatVC ??
+        UserServices.instance.selectedShella = shellaArray[indexPath.row]
+        let index = IndexPath(row:indexPath.row,section:0)
+        shellaTableView.reloadRows(at: [index], with: .none)
+        shellaTableView.selectRow(at: index, animated: false, scrollPosition: .none)
+        NotificationCenter.default.post(name: NOTIF_CHANNEL_SELECTED, object: nil)
+        self.revealViewController().revealToggle(animated: true)
+        
+    }
+
     
     
 }

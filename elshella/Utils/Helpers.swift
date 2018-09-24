@@ -8,6 +8,10 @@
 
 import Foundation
 
+
+let NOTIF_CHANNEL_SELECTED = Notification.Name("channelSelected")
+
+
 func downloadImage(withURL url:String,imageView:UIImageView){
     imageView.loadImageUsingCacheWithUrlString(urlString: url)
 }
@@ -16,4 +20,9 @@ enum SegmentType :String{
     case ViewFriend = "viewFriendCell"
     case AddFriend = "addFriendCell"
     case ViewRequest = "viewRequestCell"
+}
+
+enum messageType:String{
+    case regular="regular"
+    case outing="outing"
 }

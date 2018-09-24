@@ -32,6 +32,8 @@
 		0DF98C7C214CA63700FBA0F4 /* ViewFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF98C7B214CA63700FBA0F4 /* ViewFriendCell.swift */; };
 		0DF98C7E214CA65600FBA0F4 /* AddFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF98C7D214CA65600FBA0F4 /* AddFriendCell.swift */; };
 		0DF98C80214CA66A00FBA0F4 /* ViewRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF98C7F214CA66A00FBA0F4 /* ViewRequestCell.swift */; };
+		0DFC611D21546D2100036D95 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFC611C21546D2100036D95 /* ChatCell.swift */; };
+		0DFC611F2154795700036D95 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFC611E2154795700036D95 /* Message.swift */; };
 		0DFD0C42214B2831001FFFE1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFD0C41214B2831001FFFE1 /* ProfileVC.swift */; };
 		12D731B607A3E58003FE4DF0 /* Pods_elshella.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62F5841616CFB0F83F57789 /* Pods_elshella.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +68,8 @@
 		0DF98C7B214CA63700FBA0F4 /* ViewFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFriendCell.swift; sourceTree = "<group>"; };
 		0DF98C7D214CA65600FBA0F4 /* AddFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendCell.swift; sourceTree = "<group>"; };
 		0DF98C7F214CA66A00FBA0F4 /* ViewRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRequestCell.swift; sourceTree = "<group>"; };
+		0DFC611C21546D2100036D95 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		0DFC611E2154795700036D95 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		0DFD0C41214B2831001FFFE1 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		767C490CEB8B794DA3AEDE9D /* Pods-elshella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elshella.release.xcconfig"; path = "Pods/Target Support Files/Pods-elshella/Pods-elshella.release.xcconfig"; sourceTree = "<group>"; };
 		C3579015DD5AEF25D3C72ED9 /* Pods-elshella.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elshella.debug.xcconfig"; path = "Pods/Target Support Files/Pods-elshella/Pods-elshella.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 			children = (
 				0D02C0DD21496D360011904F /* Shella.swift */,
 				0D5315C5214DB65B007EC2A4 /* User.swift */,
+				0DFC611E2154795700036D95 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 				0DF98C7B214CA63700FBA0F4 /* ViewFriendCell.swift */,
 				0DF98C7D214CA65600FBA0F4 /* AddFriendCell.swift */,
 				0DF98C7F214CA66A00FBA0F4 /* ViewRequestCell.swift */,
+				0DFC611C21546D2100036D95 /* ChatCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -340,6 +346,7 @@
 				0D6CC2D8214605D00089ACB6 /* CreateShellaVC.swift in Sources */,
 				0D6CC2B1214578B00089ACB6 /* ShellaVC.swift in Sources */,
 				0D02C0DE21496D370011904F /* Shella.swift in Sources */,
+				0DFC611D21546D2100036D95 /* ChatCell.swift in Sources */,
 				0D6CC2AF214578B00089ACB6 /* AppDelegate.swift in Sources */,
 				0D09E2BF214A0B9A004B22EB /* CircularImageView.swift in Sources */,
 				0D5315C4214D9FA7007EC2A4 /* SegmentControlExt.swift in Sources */,
@@ -351,6 +358,7 @@
 				0DFD0C42214B2831001FFFE1 /* ProfileVC.swift in Sources */,
 				0D6CC2C821457B0B0089ACB6 /* SWRevealViewController.m in Sources */,
 				0DF98C80214CA66A00FBA0F4 /* ViewRequestCell.swift in Sources */,
+				0DFC611F2154795700036D95 /* Message.swift in Sources */,
 				0D6CC2DA214607C60089ACB6 /* UserCell.swift in Sources */,
 				0D5315C6214DB65B007EC2A4 /* User.swift in Sources */,
 			);

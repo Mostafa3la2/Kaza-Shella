@@ -47,7 +47,7 @@ class CreateShellaVC: UIViewController {
             usersArray = []
             usersTableView.reloadData()
         }else{
-            UserServices.instance.getUsersStarting(WithCharacters: usersTextField.text!) { (returnedUsersArray) in
+            UserServices.instance.getFriendsStarting(WithCharacters: usersTextField.text!) { (returnedUsersArray) in
                 self.usersArray = returnedUsersArray
                 self.usersTableView.reloadData()
             }

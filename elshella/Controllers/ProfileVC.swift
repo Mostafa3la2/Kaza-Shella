@@ -16,7 +16,7 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var userSearchTextField: UITextField!
     
-    
+    let user = UserServices.instance.user
     var segmentType : SegmentType = .ViewFriend
     var usersArray = [OtherUser]()
     override func viewDidLoad() {
@@ -27,7 +27,7 @@ class ProfileVC: UIViewController {
         segment.defaultConfiguration(font: font!, color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
         segment.selectedConfiguration(font: font!, color: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
         usersArray = UserServices.instance.friends
-        let user = UserServices.instance.user
+        
         
         emailLbl.text = user.email!
         if let photoURL = user.photoURL{
@@ -35,15 +35,11 @@ class ProfileVC: UIViewController {
         }
         
     }
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        DispatchQueue.main.async {
-            self.usersArray = UserServices.instance.friends
-            print("this would be weird to be printed at this moment")
-            self.tableView.reloadData()
-        }
-        
+       
     }
+
     
     @IBAction func textFieldDidChange(_ sender: Any) {
         if userSearchTextField.text == ""{
@@ -70,7 +66,7 @@ class ProfileVC: UIViewController {
                     self.tableView.reloadData()
                 }
             case .ViewRequest:
-                print("TODO")
+                print("non existent case")
             }
         }
     }
@@ -195,6 +191,7 @@ extension ProfileVC:UITableViewDelegate,UITableViewDataSource{
                 cell.profileImg.image = defaultImg
             }
             cell.configureCell(email: user.email)
+            
             return cell
         }
         
@@ -206,28 +203,50 @@ extension ProfileVC:UITableViewDelegate,UITableViewDataSource{
             let deleteAction = UITableViewRowAction(style: .destructive, title: "Remove") { (rowAction, indexPath) in
                 UserServices.instance.deleteFriend(withUID: self.usersArray[indexPath.row].uid, completionHandler: { (success) in
                     if success{
+                        UserServices.instance.friends = UserServices.instance.friends.filter{$0.uid != self.usersArray[indexPath.row].uid}
+                        print(UserServices.instance.friends)
                         self.usersArray.remove(at: indexPath.row)
                         tableView.deleteRows(at: [indexPath], with: .automatic)}
                     
                 })
             }
-            deleteAction.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+            
+            deleteAction.backgroundColor = #colorLiteral(red: 0.9960784314, green: 0.4980392157, blue: 0.1764705882, alpha: 1)
             return [deleteAction]
         case .AddFriend:
-            let addAction = UITableViewRowAction(style: .normal, title: "Add Friend") { (rowAction, indexPath) in
-                //configure adding friend
+            let addAction = UITableViewRowAction(style: .normal, title: "Add") { (rowAction, indexPath) in
+                UserServices.instance.sendRequest(toUID: self.usersArray[indexPath.row].uid, completionHandler: { (success) in
+                    if success{
+                        self.usersArray.remove(at: indexPath.row)
+                        tableView.deleteRows(at: [indexPath], with: .automatic)
+                    }
+                })
             }
-            addAction.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+            addAction.backgroundColor = #colorLiteral(red: 0.3803921569, green: 0.6078431373, blue: 0.5411764706, alpha: 1)
             return [addAction]
         case .ViewRequest:
             let deleteAction = UITableViewRowAction(style: .destructive, title: "Remove") { (rowAction, indexPath) in
-              //configure deleting request
+                UserServices.instance.deleteRequest(withUID: self.usersArray[indexPath.row].uid, completionHandler: { (success) in
+                    if success{
+                        UserServices.instance.reqeuests = UserServices.instance.reqeuests.filter{$0.uid != self.usersArray[indexPath.row].uid}
+                        self.usersArray.remove(at: indexPath.row)
+                        tableView.deleteRows(at: [indexPath], with: .automatic)
+                    }
+                })
             }
-            deleteAction.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
-            let addAction = UITableViewRowAction(style: .normal, title: "Add Friend") { (rowAction, indexPath) in
-                //configure accepting request
+            
+            deleteAction.backgroundColor = #colorLiteral(red: 0.9960784314, green: 0.4980392157, blue: 0.1764705882, alpha: 1)
+            let addAction = UITableViewRowAction(style: .normal, title: "Accept") { (rowAction, indexPath) in
+                UserServices.instance.acceptRequest(withUID: self.usersArray[indexPath.row].uid, completionHandler: { (success) in
+                    if success{
+                        UserServices.instance.reqeuests = UserServices.instance.reqeuests.filter{$0.uid != self.usersArray[indexPath.row].uid}
+                        UserServices.instance.friends.append(self.usersArray[indexPath.row])
+                        self.usersArray.remove(at: indexPath.row)
+                        tableView.deleteRows(at: [indexPath], with: .automatic)
+                    }
+                })
             }
-            addAction.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+            addAction.backgroundColor = #colorLiteral(red: 0.3803921569, green: 0.6078431373, blue: 0.5411764706, alpha: 1)
             return [deleteAction,addAction]
         }
     }

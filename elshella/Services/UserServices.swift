@@ -11,18 +11,7 @@ import Firebase
 class UserServices{
     
     private init(){
-        print("this should be called only once")
-        getFriends { (success) in
-            if !success{
-                print("couln't fetch friends")
-            }
-            print("friends list should be ready!!!!!!")
-        }
-        getRequests { (succes) in
-            if !succes{
-                print("couldn't fetch requests")
-            }
-        }
+
     }
     private var _friendsIDs = [OtherUser]()
     
@@ -33,11 +22,23 @@ class UserServices{
     var user:User{
         return Auth.auth().currentUser!
     }
+    
+    var shellas = [Shella]()
+    
+    var selectedShella : Shella?
     var reqeuests:[OtherUser]{
-        return _requests
+        get{
+            return _requests}
+        set{
+            _requests = newValue
+        }
     }
     var friends:[OtherUser]{
-        return _friendsIDs
+        get{
+            return _friendsIDs}
+        set{
+            _friendsIDs = newValue
+        }
     }
     func createUser(WithEmail email:String,andPassword password:String,userCreationComplete:@escaping (_ status :Bool,_ error:Error?)->()){
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
@@ -46,7 +47,7 @@ class UserServices{
                 return
             }
             let uid = user.uid
-            let userData = ["proivder":user.providerID,"email":user.email,"photoURL":""]
+            let userData = ["proivder":user.providerID,"email":user.email,"photoURL":"","friends":"","requests":""]
             FirebaseReferences.instance.REF_USERS.child(uid).updateChildValues(userData)
             userCreationComplete(true,nil)
         }
@@ -60,6 +61,7 @@ class UserServices{
             }
             loginComplete(true,nil)
         }
+        
     }
     
     func getUsersStarting(WithCharacters characters:String,handler:@escaping(_ emails:[OtherUser])->()){
@@ -70,7 +72,13 @@ class UserServices{
                 let email = user.childSnapshot(forPath: "email").value as! String
                 if email.hasPrefix(characters) && email != Auth.auth().currentUser?.email{
                     let otherUser = OtherUser(email: email, imageURL: user.childSnapshot(forPath: "photoURL").value as! String, uid: user.key)
-                    userArray.append(otherUser)
+                    if !userArray.contains(where: {$0.uid == otherUser.uid}){
+                        if !self._friendsIDs.contains(where: {$0.uid == otherUser.uid}){
+                            if !self._requests.contains(where: {$0.uid == otherUser.uid}){
+                                userArray.append(otherUser)
+                            }
+                        }
+                    }
                 }
             }
             handler(userArray)
@@ -79,12 +87,15 @@ class UserServices{
     }
     func getFriends(handler:@escaping(_ success:Bool)->()){
     
+        
     FirebaseReferences.instance.REF_USERS.child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value) { (userSnapshot) in
-            let userSnapshot = userSnapshot.childSnapshot(forPath: "friends").value as! [String]
-            for id in userSnapshot{
+        guard let userSnapshot = userSnapshot.childSnapshot(forPath: "friends").value as? [String:String] else{return}
+            for id in userSnapshot.values{
                 UserServices.instance.getUser(forUID: id, handler: { (returnedUser) in
                     let _user = returnedUser
-                    self._friendsIDs.append(_user)
+                    if !self._friendsIDs.contains(where: {$0.uid == _user.uid}){
+                        self._friendsIDs.append(_user)
+                    }
                 })
             }
         handler(true)
@@ -104,52 +115,17 @@ class UserServices{
             
         
     }
-  /*  func getFriendsStarting(WithCharacters characters:String,handler:@escaping(_ friends:[OtherUser])->()){
-        var allFriendsArray = [OtherUser]()
-        var friendsArray = [OtherUser]()
-        FirebaseReferences.instance.REF_USERS.child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value) { (userSnapshot) in
-            let userSnapshot = userSnapshot.childSnapshot(forPath: "friends").value as! [String]
-            
-           
-                for id in userSnapshot{
-                    UserServices.instance.getUser(forUID: id, handler: { (returnedUser) in
-                        let friend = returnedUser
-                        //here is the problem, this gets executed after the below checkup is done
-                        allFriendsArray.append(friend)
-                    })
-                }
-                
-            
 
-        }
-        //this loop doesn't wait for the above loop to populate the allFriendsArray
-        
-        DispatchQueue.main.async {
-            if allFriendsArray.isEmpty{
-                handler([OtherUser]())
-            }else{
-            for friend in allFriendsArray{
-                if friend.email.hasPrefix(characters) && friend.email != Auth.auth().currentUser?.email{
-                    friendsArray.append(friend)
-                    
-                }
-            }
-            handler(friendsArray)
-        }
-        }
-            
-        
-    
-    }*/
     func getRequests(handler:@escaping (_ success:Bool)->()){
-       
+      
         FirebaseReferences.instance.REF_USERS.child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value) { (userSnapshot) in
-            let userSnapshot = userSnapshot.childSnapshot(forPath: "requests").value as! [String]
-            for id in userSnapshot{
+            guard let userSnapshot = userSnapshot.childSnapshot(forPath: "requests").value as? [String:String] else{return}
+            for id in userSnapshot.values{
                 UserServices.instance.getUser(forUID: id, handler: { (returnedUser) in
                     let _user = returnedUser
+                    if !self._requests.contains(where: {$0.uid == _user.uid}){
                     self._requests.append(_user)
-                    
+                    }
                 })
             }
             
@@ -171,18 +147,52 @@ class UserServices{
     
     func deleteFriend(withUID uid:String,completionHandler:@escaping(_ success:Bool)->()){
         FirebaseReferences.instance.REF_USERS.child((Auth.auth().currentUser?.uid)!).observeSingleEvent(of: .value) { (dataSnapShot) in
-            let userSnapshot = dataSnapShot.childSnapshot(forPath: "friends").value as! [String]
-            var index = 0
-            for id in userSnapshot{
+            let userSnapshot = dataSnapShot.childSnapshot(forPath: "friends").value as! [String:String]
+            for id in userSnapshot.values{
                 if id == uid{
-                    FirebaseReferences.instance.REF_USERS.child((Auth.auth().currentUser?.uid)!).child("friends").child(String(index)).removeValue()
+                    let index = userSnapshot.values.index(of: id)
+                    let myKey = userSnapshot.keys[index!]
+                    FirebaseReferences.instance.REF_USERS.child((Auth.auth().currentUser?.uid)!).child("friends").child(myKey).removeValue()
+                    FirebaseReferences.instance.REF_USERS.child(id).observeSingleEvent(of: .value, with: { (userSnapShot) in
+                        var friends = userSnapShot.childSnapshot(forPath: "friends").value as! [String:String]
+                        
+                        let indexOfKey = friends.values.index(of: self.user.uid)
+                        let key  = friends.keys[indexOfKey!]
+                        FirebaseReferences.instance.REF_USERS.child(id).child("friends").child(key).removeValue()
+                        completionHandler(true)
+                    })
+                    
+                    
+                }
+                
+            }
+        }
+    }
+    func acceptRequest(withUID uid:String,completionHandler:@escaping (_ success:Bool)->()){
+        FirebaseReferences.instance.REF_USERS.child(user.uid).child("friends").childByAutoId().setValue(uid)
+        FirebaseReferences.instance.REF_USERS.child(uid).child("friends").childByAutoId().setValue(user.uid)
+        completionHandler(true)
+    }
+    func deleteRequest(withUID uid:String,completionHandler:@escaping(_ success:Bool)->()){
+        FirebaseReferences.instance.REF_USERS.child(user.uid).observeSingleEvent(of: .value) { (dataSnapShot) in
+            let userSnapshot = dataSnapShot.childSnapshot(forPath: "requests").value as! [String:String]
+            
+            for id in userSnapshot.values{
+                if id == uid{
+                    let index = userSnapshot.values.index(of: id)
+                    let key = userSnapshot.keys[index!]
+                    FirebaseReferences.instance.REF_USERS.child((Auth.auth().currentUser?.uid)!).child("requests").child(key).removeValue()
                     completionHandler(true)
                     break
                     
                 }
-                index+=1
+                
             }
         }
+    }
+    func sendRequest(toUID uid:String,completionHandler:@escaping(_ success:Bool)->()){
+        FirebaseReferences.instance.REF_USERS.child(uid).child("requests").childByAutoId().setValue(user.uid)
+        completionHandler(true)
     }
     
     func getIds(forEmails emails:[String],handler:@escaping (_ uidArray:[String])->()){
@@ -202,10 +212,6 @@ class UserServices{
     }
     func getImageURL(forUserId uid:String,handler:@escaping(_ url:String)->()){
         var imageURL = ""
-        if uid == Auth.auth().currentUser?.uid{
-            handler((Auth.auth().currentUser?.photoURL?.absoluteString)!)
-            return
-        }
         FirebaseReferences.instance.REF_USERS.observeSingleEvent(of: .value) { (usersnapShot) in
             guard let usersnapShot = usersnapShot.children.allObjects as? [DataSnapshot] else {return}
             for user in usersnapShot{
