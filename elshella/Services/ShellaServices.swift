@@ -18,8 +18,15 @@ class ShellaServices{
     
     
     func CreateShella(withTitle title:String, andDescription description:String,andImageUrl imageURL:String,forUserIds userIds:[String],completionHandler:@escaping (_ status :Bool)->()){
-        FirebaseReferences.instance.REF_SHELLA.childByAutoId().updateChildValues(["title":title,"description":description,"members":userIds,"ImageURL":imageURL])
+        
 
+        
+        let shella = FirebaseReferences.instance.REF_SHELLA.childByAutoId()
+        shella.updateChildValues(["title":title,"description":description,"ImageURL":imageURL])
+        for id in userIds{
+            shella.child("members").childByAutoId().setValue(id)
+        }
+        
             completionHandler(true)
     }
     func getShellaImage(forTitle title:String,handler:@escaping (_ imageURL:String)->()){
@@ -38,13 +45,13 @@ class ShellaServices{
         FirebaseReferences.instance.REF_SHELLA.observeSingleEvent(of: .value) { (shellaSnapshot) in
             guard let shellaSnapshot = shellaSnapshot.children.allObjects as? [DataSnapshot] else{return}
             for shella in shellaSnapshot{
-                let membersArray = shella.childSnapshot(forPath: "members").value as! [String]
-                if membersArray.contains((Auth.auth().currentUser?.uid)!){
-                    
+                let membersDict = shella.childSnapshot(forPath: "members").value as! [String:String]
+                if membersDict.values.contains((Auth.auth().currentUser?.uid)!){
+                    let members = membersDict.values.map{$0}
                     let title = shella.childSnapshot(forPath: "title").value as! String
                     let desc = shella.childSnapshot(forPath: "description").value as! String
                     let imageURL = shella.childSnapshot(forPath: "ImageURL").value as! String
-                    let shella = Shella(title: title, desc: desc, imageURL: imageURL, members: membersArray, key: shella.key)
+                    let shella = Shella(title: title, desc: desc, imageURL: imageURL, members: members, key: shella.key)
                     if !UserServices.instance.shellas.contains(where: {$0.key == shella.key}){
                         UserServices.instance.shellas.append(shella)}
                 }
@@ -58,13 +65,13 @@ class ShellaServices{
         FirebaseReferences.instance.REF_SHELLA.observeSingleEvent(of: .value) { (shellaSnapshot) in
             guard let shellaSnapshot = shellaSnapshot.children.allObjects as? [DataSnapshot] else{return}
             for shella in shellaSnapshot{
-                let membersArray = shella.childSnapshot(forPath: "members").value as! [String]
-                if membersArray.contains((Auth.auth().currentUser?.uid)!){
-                    
+                let membersDict = shella.childSnapshot(forPath: "members").value as! [String:String]
+                if membersDict.values.contains((Auth.auth().currentUser?.uid)!){
+                    let members = membersDict.values.map{$0}
                     let title = shella.childSnapshot(forPath: "title").value as! String
                     let desc = shella.childSnapshot(forPath: "description").value as! String
                     let imageURL = shella.childSnapshot(forPath: "ImageURL").value as! String
-                    let shella = Shella(title: title, desc: desc, imageURL: imageURL, members: membersArray, key: shella.key)
+                    let shella = Shella(title: title, desc: desc, imageURL: imageURL, members: members, key: shella.key)
                     handler(shella)
                     break
                 }
@@ -114,6 +121,26 @@ class ShellaServices{
             sendComplete(true)
         
         
+    }
+    func leaveShella(withKey key :String,completionHandler:@escaping (_ success:Bool)->()){
+        FirebaseReferences.instance.REF_SHELLA.child(key).observe(.value) { (shellaMembersSnapshot) in
+            guard let members = shellaMembersSnapshot.childSnapshot(forPath: "members").value as? [String:String] else {return}
+            let index = members.values.index(of: UserServices.instance.user.uid)
+            let indexToRemove = members.keys[index!]
+            
+            FirebaseReferences.instance.REF_SHELLA.child(key).child("members").child(indexToRemove).removeValue()
+            for shella in UserServices.instance.shellas{
+                if shella.key == key{
+                    UserServices.instance.shellas = UserServices.instance.shellas.filter{$0.key != shella.key}
+                    break
+                }
+            }
+            completionHandler(true)
+        }
+    }
+    func addToShella(withKey key:String,userID:String,completionHandler:@escaping (_ success:Bool)->()){
+        FirebaseReferences.instance.REF_SHELLA.child(key).child("members").childByAutoId().setValue(userID)
+        completionHandler(true)
     }
     
 

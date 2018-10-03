@@ -928,15 +928,41 @@
                                         <state key="normal" image="smackBurger"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shella Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2QO-Xz-Lmg">
-                                        <rect key="frame" x="100.5" y="32" width="174" height="37"/>
+                                        <rect key="frame" x="101" y="32" width="173.5" height="37"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="32"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JGN-QI-EOX">
+                                        <rect key="frame" x="291" y="34.5" width="74" height="32"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mq8-gY-YMo">
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="Nc4-J4-eQn"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="UNa-gQ-pwH"/>
+                                                </constraints>
+                                                <state key="normal" image="account-logout"/>
+                                                <connections>
+                                                    <action selector="leaveShellaPressed:" destination="lPG-oo-P7Q" eventType="touchUpInside" id="r4Y-ft-Dmm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8C-xm-iG8">
+                                                <rect key="frame" x="42" y="0.0" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="AB0-pr-8F9"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="nKx-52-tWC"/>
+                                                </constraints>
+                                                <state key="normal" image="addChannelButton"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.49803921569999998" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="2QO-Xz-Lmg" firstAttribute="centerY" secondItem="Coj-xT-1cf" secondAttribute="centerY" constant="10" id="84U-it-z8m"/>
+                                    <constraint firstItem="JGN-QI-EOX" firstAttribute="centerY" secondItem="Coj-xT-1cf" secondAttribute="centerY" constant="10" id="F1q-JW-QBN"/>
+                                    <constraint firstAttribute="trailing" secondItem="JGN-QI-EOX" secondAttribute="trailing" constant="10" id="Hxx-II-0SC"/>
                                     <constraint firstItem="j7w-cE-4by" firstAttribute="centerY" secondItem="Coj-xT-1cf" secondAttribute="centerY" constant="10" id="PVV-UV-rO9"/>
                                     <constraint firstItem="j7w-cE-4by" firstAttribute="leading" secondItem="Coj-xT-1cf" secondAttribute="leading" constant="10" id="f1Y-cb-sFQ"/>
                                     <constraint firstItem="2QO-Xz-Lmg" firstAttribute="centerX" secondItem="Coj-xT-1cf" secondAttribute="centerX" id="jof-R2-mqO"/>
@@ -944,10 +970,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvD-lS-982">
-                                <rect key="frame" x="0.0" y="602" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="592" width="375" height="75"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zj9-kM-vr0">
-                                        <rect key="frame" x="320" y="17" width="45" height="31"/>
+                                        <rect key="frame" x="320" y="22" width="45" height="31"/>
                                         <color key="backgroundColor" red="0.98823529409999999" green="0.79215686269999996" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="15"/>
                                         <state key="normal" title="SEND">
@@ -958,7 +984,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hsX-nJ-1SO">
-                                        <rect key="frame" x="10" y="17.5" width="300" height="30"/>
+                                        <rect key="frame" x="10" y="22.5" width="300" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -969,13 +995,13 @@
                                     <constraint firstItem="hsX-nJ-1SO" firstAttribute="centerY" secondItem="lvD-lS-982" secondAttribute="centerY" id="Hdr-Ha-gLV"/>
                                     <constraint firstItem="Zj9-kM-vr0" firstAttribute="centerY" secondItem="hsX-nJ-1SO" secondAttribute="centerY" id="IRX-Ey-Uxj"/>
                                     <constraint firstItem="hsX-nJ-1SO" firstAttribute="leading" secondItem="lvD-lS-982" secondAttribute="leading" constant="10" id="IrN-Or-mQ2"/>
-                                    <constraint firstAttribute="height" constant="65" id="JzV-I5-j3E"/>
+                                    <constraint firstAttribute="height" constant="75" id="JzV-I5-j3E"/>
                                     <constraint firstItem="Zj9-kM-vr0" firstAttribute="leading" secondItem="hsX-nJ-1SO" secondAttribute="trailing" constant="10" id="KSo-Q8-Qvi"/>
                                     <constraint firstAttribute="trailing" secondItem="Zj9-kM-vr0" secondAttribute="trailing" constant="10" id="dmN-yH-yJr"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IXA-qK-ggz">
-                                <rect key="frame" x="0.0" y="80" width="375" height="522"/>
+                                <rect key="frame" x="0.0" y="80" width="375" height="512"/>
                                 <color key="backgroundColor" red="0.3803921569" green="0.60784313729999995" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatCell" rowHeight="60" id="kaY-ba-d02" customClass="ChatCell" customModule="elshella" customModuleProvider="target">
@@ -1055,6 +1081,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="account-logout" width="24" height="24"/>
         <image name="addChannelButton" width="22" height="22"/>
         <image name="menuProfileIcon" width="99" height="99"/>
         <image name="smackBurger" width="40" height="40"/>

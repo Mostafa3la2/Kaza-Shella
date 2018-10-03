@@ -20,6 +20,7 @@ class ShellaVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(ShellaVC.leftChannel(_:)), name: NOTIF_CHANNEL_LEFT, object: nil)
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 40
         shellaTableView.delegate = self
         shellaTableView.dataSource = self
@@ -55,6 +56,10 @@ class ShellaVC: UIViewController {
         }
 
         
+    }
+    @objc func leftChannel(_ notif:Notification){
+        shellaArray = UserServices.instance.shellas
+        shellaTableView.reloadData()
     }
 
 }

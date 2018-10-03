@@ -86,6 +86,16 @@ class ChatVC: UIViewController {
         }
     }
     
+    @IBAction func leaveShellaPressed(_ sender: Any) {
+        ShellaServices.instance.leaveShella(withKey: (shella?.key)!) { (success) in
+            if success{
+                NotificationCenter.default.post(name: NOTIF_CHANNEL_LEFT, object: nil)
+                self.revealViewController().revealToggle(animated: true)
+                
+            }
+        }
+    }
+    
 }
 
 extension ChatVC:UITableViewDelegate,UITableViewDataSource{
